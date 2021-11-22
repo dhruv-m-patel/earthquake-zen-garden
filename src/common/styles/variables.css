@@ -1,20 +1,12 @@
 :root {
+  --baseFontFamily: sans-serif;
   --baseFontSize: 14px;
 
-  --red: #ee5340;
-  --orange: #ed7a00;
-  --green: #13ce73;
-  --blue: #61dafb;
-  --dark-blue: blue;
-  --white: #fff;
-  --black: #000;
-  --grey: #ededed;
-
-  --backgroundColor: #282c34;
-
-  --error: var(--red);
-  --warning: var(--orange);
-  --success: var(--green);
+  --white: #ededed;
+  --grey: #777777;
+  --black: #444444;
+  --blue: #0011bb;
+  --purple: #6600cc;
 
   @custom-media --mobileViewport (width >= 320px);
   @custom-media --tabletViewport (width >= 768px);
