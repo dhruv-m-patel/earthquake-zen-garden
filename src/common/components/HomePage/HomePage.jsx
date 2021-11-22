@@ -12,12 +12,9 @@ export default function HomePage({ config }) {
   const features = config?.data?.features;
 
   return (
-    <Page>
-      {!!features?.length && (
+    !!features?.length && (
+      <Page title={config.data.metadata.title}>
         <div className={cx('homePage')}>
-          <h2 className={cx('title')}>{config.data.metadata.title}</h2>
-          <br />
-          <br />
           <table className={cx('table')}>
             <thead>
               <th>Title</th>
@@ -39,8 +36,8 @@ export default function HomePage({ config }) {
             </tbody>
           </table>
         </div>
-      )}
-    </Page>
+      </Page>
+    )
   );
 }
 

@@ -32,7 +32,11 @@ body {
   font-size: calc(10px + 2vmin);
 }
 
+.title {
+  text-align: center;
+}
+
 .content {
-  max-width: 992px;
+  max-width: 770px;
   margin: 0 auto;
 }

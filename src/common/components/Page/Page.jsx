@@ -31,6 +31,7 @@ export default function Page({
         {!!config && !!Object.keys(config).length && (
           <React.Fragment>
             <HeaderNavigation />
+            {!!title?.length && <h2 className={cx('title')}>{title}</h2>}
             <div className={cx('content')}>{children}</div>
           </React.Fragment>
         )}

@@ -1,0 +1,26 @@
+.profilePage {
+  display: flex;
+  justify-content: space-evenly;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.avatar > img {
+  max-height: 150px;
+  max-width: 150px;
+}
+
+.bioDetail {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+.property {
+  min-width: 100px;
+  font-weight: bold;
+}
+
+.value {
+  max-width: 200px;
+}
