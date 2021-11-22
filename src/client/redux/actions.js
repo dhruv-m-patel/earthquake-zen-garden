@@ -1,10 +1,10 @@
 import { RSAA } from 'redux-api-middleware';
 
 export const Actions = {
-  Test: {
-    FetchDataPending: 'FetchDataPending',
-    FetchDataCompleted: 'FetchDataCompleted',
-    FetchDataFailed: 'FetchDataFailed',
+  Config: {
+    FetchConfigPending: 'FetchConfigPending',
+    FetchConfigCompleted: 'FetchConfigCompleted',
+    FetchConfigFailed: 'FetchConfigFailed',
   },
 };
 
@@ -19,12 +19,12 @@ export function generateRequest({ body, ...options }) {
   };
 }
 
-export const fetchTestData = () =>
+export const fetchConfiguration = () =>
   generateRequest({
-    endpoint: '/api/test-data',
+    endpoint: '/api/config',
     types: [
-      Actions.Test.FetchDataPending,
-      Actions.Test.FetchDataCompleted,
-      Actions.Test.FetchDataFailed,
+      Actions.Config.FetchConfigPending,
+      Actions.Config.FetchConfigCompleted,
+      Actions.Config.FetchConfigFailed,
     ],
   });
