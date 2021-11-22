@@ -1,0 +1,26 @@
+@import '../../styles/variables.css';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--paleWhite);
+  padding: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.logo img {
+  max-height: 40px;
+  max-width: 40px;
+}
+
+.title a,
+.logo a {
+  color: var(--black);
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+}

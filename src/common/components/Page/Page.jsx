@@ -5,6 +5,7 @@ import DefaultHelmet from '../DefaultHelmet';
 import styles from './Page.css';
 import { DataPropType, ProfilePropType, SitePropType } from '../../prop-types';
 import PageContext from '../../context/PageContext';
+import HeaderNavigation from '../HeaderNavigation';
 
 const cx = classnames.bind(styles);
 
@@ -26,11 +27,8 @@ export default function Page({
     <PageContext.Provider value={{ config }}>
       <div className={cx('app')}>
         <DefaultHelmet title={title} />
-        <header className={cx('appHeader')}>
-          <h2>Earthquake Zen Garden</h2>
-        </header>
-        <br />
-        <br />
+        {isFetchingConfiguration && <p>Fetching site data...</p>}
+        {!!config && !!Object.keys(config).length && <HeaderNavigation />}
         <div className={cx('content')}>{children}</div>
       </div>
     </PageContext.Provider>
