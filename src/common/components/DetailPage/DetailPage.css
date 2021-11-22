@@ -1,0 +1,15 @@
+.detailPage {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.featureDetail {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+.property {
+  font-weight: bold;
+  min-width: 100px;
+}

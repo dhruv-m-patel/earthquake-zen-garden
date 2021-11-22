@@ -17,7 +17,7 @@ export default function Router() {
       />
       <Route
         exact
-        path="/detail"
+        path="/detail/:id"
         component={loadable(() => import('./components/DetailPage'))}
       />
       <Route component={loadable(() => import('./components/NotFound'))} />
