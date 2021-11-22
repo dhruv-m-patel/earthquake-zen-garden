@@ -1,12 +1,11 @@
 import { connect } from 'react-redux';
 import DetailPage from './DetailPage';
 
-function mapStateToProps() {
-  return {};
+function mapStateToProps({ config }, { match }) {
+  return {
+    featureId: match.params.id,
+    config: config.data,
+  };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {};
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(DetailPage);
+export default connect(mapStateToProps)(DetailPage);
