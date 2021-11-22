@@ -8,7 +8,6 @@ describe('Page', () => {
   test('it should render', () => {
     const snapshot = tester.getSnapshot(Page, {
       title: 'Test App',
-      description: 'Just testing',
       children: <div />,
     });
     expect(snapshot).toMatchSnapshot();

@@ -1,18 +1,12 @@
 {
-  "name": "universal-react",
+  "name": "earthquake-zen-garden",
   "version": "1.0.0",
-  "description": "A universal react app boilerplate with SSR and database support",
   "main": "build/server/index.js",
   "engines": {
     "node": ">= 14.15.5",
     "npm": ">= 6.14.11"
   },
   "scripts": {
-    "migration:create": "db-migrate --config migrations/db-migrate.json create",
-    "migration:apply": "db-migrate --config migrations/db-migrate.json up",
-    "migration:apply:stage": "db-migrate --config migrations/db-migrate.json -e stage up",
-    "migration:apply:prod": "db-migrate --config migrations/db-migrate.json -e prod up",
-    "migration:undo": "db-migrate --config migrations/db-migrate.json down",
     "build:server": "babel ./src --out-dir build",
     "build:client": "BABEL_ENV=webpack webpack",
     "build": "npm run build:server && npm run build:client",
@@ -33,19 +27,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dhruv-m-patel/universal-react.git"
+    "url": "git+https://github.com/dhruv-m-patel/earthquake-zen-garden.git"
   },
-  "keywords": [
-    "react",
-    "ssr",
-    "express",
-    "webpack4"
-  ],
   "author": "Dhruv Patel",
   "bugs": {
-    "url": "https://github.com/dhruv-m-patel/universal-react/issues"
+    "url": "https://github.com/dhruv-m-patel/earthquake-zen-garden/issues"
   },
-  "homepage": "https://github.com/dhruv-m-patel/universal-react#readme",
+  "homepage": "https://github.com/dhruv-m-patel/earthquake-zen-garden#readme",
   "license": "ISC",
   "dependencies": {
     "@babel/runtime": "^7.14.0",
@@ -57,35 +45,26 @@
     "@loadable/component": "^5.15.0",
     "@loadable/server": "^5.15.0",
     "bluebird": "^3.7.2",
-    "body-parser": "^1.19.0",
     "classnames": "^2.3.1",
     "compression": "^1.7.4",
     "confit": "^2.3.0",
     "cookie-parser": "^1.4.5",
-    "db-migrate": "^0.11.12",
-    "db-migrate-mysql": "^2.1.2",
-    "db-migrate-pg": "^1.2.2",
+    "cors": "^2.8.5",
     "dotenv": "^8.6.0",
     "express": "^4.17.1",
     "express-enrouten": "^1.3.0",
     "fast-deep-equal": "^2.0.1",
     "fetch-everywhere": "^1.0.5",
     "html-minifier": "^4.0.0",
-    "meddleware": "^3.0.4",
     "morgan": "^1.10.0",
-    "mysql": "^2.17.1",
-    "pg": "^7.18.1",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
-    "react-bootstrap": "^1.6.1",
     "react-dom": "^16.14.0",
     "react-helmet": "^5.2.1",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "redux": "^4.1.0",
     "redux-api-middleware": "^3.2.1",
-    "shortstop-handlers": "^1.0.1",
-    "shortstop-regex": "0.0.1",
     "store": "^2.0.12",
     "webpack": "^4.46.0"
   },

@@ -10,11 +10,6 @@ export default function Router() {
         path="/"
         component={loadable(() => import('./components/HomePage'))}
       />
-      <Route
-        exact
-        path="/redux-example"
-        component={loadable(() => import('./components/ReduxExamplePage'))}
-      />
       <Route component={loadable(() => import('./components/NotFound'))} />
     </Switch>
   );

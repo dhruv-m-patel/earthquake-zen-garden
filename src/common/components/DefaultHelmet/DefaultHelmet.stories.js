@@ -12,10 +12,7 @@ storiesOf('DefaultHelmet', module)
   ))
   .add('with overrides', () => (
     <React.Fragment>
-      <DefaultHelmet
-        title="My Custom Title"
-        description="This is a custom page description"
-      />
+      <DefaultHelmet title="My Custom Title" />
       <p>Inspect page markup in HEAD section to know more.</p>
     </React.Fragment>
   ));

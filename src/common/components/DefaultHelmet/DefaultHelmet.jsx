@@ -2,11 +2,10 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 
-export default function DefaultHelmet({ title, description }) {
+export default function DefaultHelmet({ title }) {
   return (
     <Helmet>
       <title>{title}</title>
-      <meta name="description" content={description} />
     </Helmet>
   );
 }
@@ -17,6 +16,5 @@ DefaultHelmet.propTypes = {
 };
 
 DefaultHelmet.defaultProps = {
-  title: 'Universal React App',
-  description: 'A universal react app SSR and database support',
+  title: 'Earthquake Zen Garden',
 };
