@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames/bind';
 import DefaultHelmet from '../DefaultHelmet';
@@ -28,8 +28,12 @@ export default function Page({
       <div className={cx('app')}>
         <DefaultHelmet title={title} />
         {isFetchingConfiguration && <p>Fetching site data...</p>}
-        {!!config && !!Object.keys(config).length && <HeaderNavigation />}
-        <div className={cx('content')}>{children}</div>
+        {!!config && !!Object.keys(config).length && (
+          <React.Fragment>
+            <HeaderNavigation />
+            <div className={cx('content')}>{children}</div>
+          </React.Fragment>
+        )}
       </div>
     </PageContext.Provider>
   );
@@ -38,11 +42,11 @@ export default function Page({
 Page.propTypes = {
   isFetchingConfiguration: PropTypes.bool,
   error: PropTypes.string,
-  config: {
+  config: PropTypes.shape({
     site: SitePropType.isRequired,
     profile: ProfilePropType.isRequired,
     data: DataPropType.isRequired,
-  },
+  }),
   fetchSiteConfiguration: PropTypes.func,
   children: PropTypes.node.isRequired,
   title: PropTypes.string,

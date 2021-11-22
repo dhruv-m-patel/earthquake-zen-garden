@@ -1,0 +1,12 @@
+.title {
+  text-align: center;
+}
+
+.table {
+  width: 100%;
+
+  & > thead > tr > th,
+  & > tbody > tr > td {
+    text-align: center;
+  }
+}

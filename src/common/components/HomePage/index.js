@@ -1,19 +1,10 @@
 import { connect } from 'react-redux';
-import { fetchConfiguration } from '../../../client/redux/actions';
 import HomePage from './HomePage';
 
 function mapStateToProps({ config }) {
   return {
-    isFetchingConfiguration: config.isFetching,
     config: config.data,
-    error: config.error,
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    fetchSiteConfiguration: () => dispatch(fetchConfiguration()),
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps)(HomePage);
