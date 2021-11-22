@@ -1,21 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import createStore from './store';
 import Router from '../common/router';
+import ReduxStateDecorator from './redux/StateDecorator';
 
 export default function renderApp() {
   const supportsHistory = 'pushState' in window.history;
   const preloadedState = window.__PRELOADED_STATE__;
+  const stateData = document.getElementById('stateData');
+  if (stateData) {
+    document.head.removeChild(stateData);
+  }
   delete window.__PRELOADED_STATE__;
-  const store = createStore(preloadedState);
 
   ReactDOM.hydrate(
     <BrowserRouter forceRefresh={!supportsHistory}>
-      <Provider store={store}>
+      <ReduxStateDecorator initialState={preloadedState}>
         <Router />
-      </Provider>
+      </ReduxStateDecorator>
     </BrowserRouter>,
     document.getElementById('root')
   );

@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import { Provider } from 'react-redux';
 import path from 'path';
 import { StaticRouter } from 'react-router-dom';
 import { ChunkExtractor } from '@loadable/server';
-import createStore from '../../client/store';
+import ReduxStateDecorator from '../../client/redux/StateDecorator';
 import { DEFAULT_STATE } from '../../client/redux/reducers';
 import Router from '../../common/router';
 
@@ -25,17 +24,13 @@ export default function renderPage(req, res) {
     return;
   }
 
-  const store = createStore(req.initialState || DEFAULT_STATE);
-  const preloadedState = req.initialState || store.getState();
-  if (!req.initialState) {
-    req.initialState = preloadedState;
-  }
+  const preloadedState = req.initialState || DEFAULT_STATE;
 
   const application = extractor.collectChunks(
     <StaticRouter location={req.url} context={context}>
-      <Provider store={store}>
+      <ReduxStateDecorator initialState={preloadedState}>
         <Router />
-      </Provider>
+      </ReduxStateDecorator>
     </StaticRouter>
   );
   const html = ReactDOMServer.renderToString(application);
