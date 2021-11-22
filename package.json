@@ -20,8 +20,8 @@
     "prettier:format": "prettier --write .",
     "prettier:verify": "prettier --check .",
     "pretest": "jest --clearCache",
-    "test": "jest",
-    "ci:test": "jest --updateSnapshot --coverage",
+    "test": "jest --passWithNoTests",
+    "ci:test": "jest --coverage --passWithNoTests",
     "storybook": "start-storybook -p 3001",
     "build-storybook": "build-storybook"
   },
