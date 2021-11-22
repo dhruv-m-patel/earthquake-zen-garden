@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import DefaultHelmet from './DefaultHelmet';
 
-storiesOf('DefaultHelmet', module)
+storiesOf('Components | DefaultHelmet', module)
   .addDecorator((story) => <div style={{ margin: '2rem' }}>{story()}</div>)
   .add('with default props', () => (
     <React.Fragment>
