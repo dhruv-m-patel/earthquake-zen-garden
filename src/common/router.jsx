@@ -10,6 +10,21 @@ export default function Router() {
         path="/"
         component={loadable(() => import('./components/HomePage'))}
       />
+      <Route
+        exact
+        path="/home"
+        component={loadable(() => import('./components/HomePage'))}
+      />
+      <Route
+        exact
+        path="/profile"
+        component={loadable(() => import('./components/ProfilePage'))}
+      />
+      <Route
+        exact
+        path="/detail"
+        component={loadable(() => import('./components/DetailPage'))}
+      />
       <Route component={loadable(() => import('./components/NotFound'))} />
     </Switch>
   );
