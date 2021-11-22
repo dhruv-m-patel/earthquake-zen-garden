@@ -28,8 +28,12 @@ export default function Page({
       <div className={cx('app')}>
         <DefaultHelmet title={title} />
         {isFetchingConfiguration && <p>Fetching site data...</p>}
-        {!!config && !!Object.keys(config).length && <HeaderNavigation />}
-        <div className={cx('content')}>{children}</div>
+        {!!config && !!Object.keys(config).length && (
+          <React.Fragment>
+            <HeaderNavigation />
+            <div className={cx('content')}>{children}</div>
+          </React.Fragment>
+        )}
       </div>
     </PageContext.Provider>
   );
