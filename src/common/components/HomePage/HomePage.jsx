@@ -29,7 +29,7 @@ export default function HomePage({ config }) {
                 <tr key={feature.id}>
                   <td>
                     <a href={`/detail/${feature.id}`} rel="noopener noreferrer">
-                      {feature.properties.title}
+                      {feature.properties.title.substr(8)}
                     </a>
                   </td>
                   <td>{feature.properties.mag}</td>
