@@ -12,11 +12,6 @@ export default function Router() {
       />
       <Route
         exact
-        path="/home"
-        component={loadable(() => import('./components/HomePage'))}
-      />
-      <Route
-        exact
         path="/profile"
         component={loadable(() => import('./components/ProfilePage'))}
       />

@@ -16,7 +16,7 @@ export default function HeaderNavigation() {
   return (
     <div className={cx('header')}>
       <div className={cx('logo')}>
-        <a href="/home" rel="noreferrer noopener">
+        <a href="/" rel="noreferrer noopener">
           <img src={logoImage} alt="Logo" />
         </a>
       </div>
