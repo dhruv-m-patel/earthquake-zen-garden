@@ -22,11 +22,11 @@ export default function HomePage({ config }) {
               <th>Time</th>
             </thead>
             <tbody>
-              {config.data.features.map((feature) => (
+              {features.map((feature) => (
                 <tr key={feature.id}>
                   <td>
                     <a href={`/detail/${feature.id}`} rel="noopener noreferrer">
-                      {feature.properties.title.substr(8)}
+                      {feature.properties.place}
                     </a>
                   </td>
                   <td>{feature.properties.mag}</td>
